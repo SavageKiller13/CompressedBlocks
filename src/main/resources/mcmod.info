@@ -1,0 +1,16 @@
+[
+{
+  "modid": "skcbm",
+  "name": "Compressed Blocks Mod",
+  "description": "A mod for turning normal blocks into a compressed form.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Savage_Killer13"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

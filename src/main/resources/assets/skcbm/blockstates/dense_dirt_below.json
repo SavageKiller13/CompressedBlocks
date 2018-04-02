@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": { 
+            "model": "skcbm:dense_dirt_below" 
+        }
+    }
+}

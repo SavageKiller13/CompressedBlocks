@@ -3,7 +3,7 @@ package com.Savage_Killer13.CompressedBlocks.objects.blocks;
 import com.Savage_Killer13.CompressedBlocks.Main;
 import com.Savage_Killer13.CompressedBlocks.init.BlockInit;
 import com.Savage_Killer13.CompressedBlocks.init.ItemInit;
-import com.Savage_Killer13.CompressedBlocks.util.IHasModel;
+import com.Savage_Killer13.CompressedBlocks.util.interfaces.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,7 +16,7 @@ public class BlockBase extends Block implements IHasModel {
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-
+        
         BlockInit.BLOCKS.add(this);
         ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }

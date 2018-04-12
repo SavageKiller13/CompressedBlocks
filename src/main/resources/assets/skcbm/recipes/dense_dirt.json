@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern": [
+        "DDD",
+        "DID",
+        "DDD"
+    ],
+    
+    "key": {
+        "D": {
+            "item": "minecraft:dirt",
+            "data": 0
+        },
+        "I": {
+            "item": "skcbm:item_block_compressor"
+        }
+    },
+    
+    "result": {
+        "item": "skcbm:dense_dirt"
+    }
+}

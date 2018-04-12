@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "variant=dense_iron": {
+            "model": "skcbm:ore_overworld_dense_iron"
+        },
+        "variant=dense_coal": {
+            "model": "skcbm:ore_overworld_dense_coal"
+        },
+        "variant=dense_gold": {
+            "model": "skcbm:ore_overworld_dense_gold"
+        },
+        "variant=dense_diamond": {
+            "model": "skcbm:ore_overworld_dense_diamond"
+        }
+    }
+}

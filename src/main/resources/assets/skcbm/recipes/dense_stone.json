@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern": [
+        "SSS",
+        "SIS",
+        "SSS"
+    ],
+    
+    "key": {
+        "S": {
+            "item": "minecraft:stone",
+            "data": 0
+        },
+        "I": {
+            "item": "skcbm:item_block_compressor"
+        }
+    },
+    
+    "result": {
+        "item": "skcbm:dense_stone"
+    }
+}

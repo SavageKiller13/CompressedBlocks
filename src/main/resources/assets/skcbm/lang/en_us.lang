@@ -1,3 +1,13 @@
 item.ingot_bedrock.name=Bedrock Ingot
-item.block_compressor.name=Block Compressor
+item.item_block_compressor.name=Block Compressor
+item.clay_pile.name=Clay Pile
 tile.compressed_bedrock.name=Compressed Bedrock
+tile.ore_overworld_dense_iron.name=Dense Iron Ore
+tile.ore_overworld_dense_coal.name=Dense Coal Ore
+tile.ore_overworld_dense_gold.name=Dense Gold Ore
+tile.dense_dirt.name=Dense Dirt
+tile.dense_dirt_below.name=Dense Dirt Below
+tile.dense_stone.name=Dense Stone
+tile.dense_glass.name=Dense Glass
+tile.dense_cobblestone.name=Dense Cobblestone
+tile.dense_furnace.name=Dense Furnace

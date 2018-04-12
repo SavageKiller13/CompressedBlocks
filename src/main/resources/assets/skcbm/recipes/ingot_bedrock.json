@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern": [
+        " O ",
+        "OSO",
+        " O "
+    ],
+    
+    "key": {
+        "O": {
+            "item": "minecraft:obsidian"
+        },
+        "S": {
+            "item": "minecraft:nether_star"
+        }
+    },
+    
+    "result": {
+        "item": "skcbm:ingot_bedrock"
+    }
+}

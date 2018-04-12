@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern": [
+        "SSS",
+        "SIS",
+        "SSS"
+    ],
+    
+    "key": {
+        "S": {
+            "item": "minecraft:end_stone"
+        },
+        "I": {
+            "item": "skcbm:item_block_compressor"
+        }
+    },
+    
+    "result": {
+        "item": "skcbm:dense_end_stone"
+    }
+}

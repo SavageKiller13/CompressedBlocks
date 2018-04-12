@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern": [
+        "EIE",
+        "INI",
+        "EIE"
+    ],
+    
+    "key": {
+        "E": {
+            "item": "minecraft:end_crystal"
+        },
+        "I": {
+            "item": "skcbm:ingot_bedrock"
+        },
+        "N": {
+            "item": "minecraft:nether_star"
+        }
+    },
+    
+    "result": {
+        "item": "skcbm:compressed_bedrock"
+    }
+}

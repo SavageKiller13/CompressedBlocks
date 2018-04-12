@@ -1,0 +1,11 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "up": "skcbm:blocks/dense_furnace_top",
+        "down": "skcbm:blocks/dense_furnace_top",
+        "north": "skcbm:blocks/dense_furnace_front_on",
+        "south": "skcbm:blocks/dense_furnace_side",
+        "east": "skcbm:blocks/dense_furnace_side",
+        "west": "skcbm:blocks/dense_furnace_side"
+    }
+}

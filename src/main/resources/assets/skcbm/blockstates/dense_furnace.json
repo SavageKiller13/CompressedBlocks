@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "burning=false,facing=north": { "model": "skcbm:dense_furnace" },
+        "burning=false,facing=south": { "model": "skcbm:dense_furnace", "y": 90 },
+        "burning=false,facing=east": { "model": "skcbm:dense_furnace", "y": 180 },
+        "burning=false,facing=west": { "model": "skcbm:dense_furnace", "y": 270 },
+        "burning=true,facing=north": { "model": "skcbm:lit_dense_furnace" },
+        "burning=true,facing=south": { "model": "skcbm:lit_dense_furnace", "y": 90 },
+        "burning=true,facing=east": { "model": "skcbm:lit_dense_furnace", "y": 180 },
+        "burning=true,facing=west": { "model": "skcbm:lit_dense_furnace", "y": 270 }
+    }
+}

@@ -7,6 +7,7 @@ package com.Savage_Killer13.CompressedBlocks;
 
 import com.Savage_Killer13.CompressedBlocks.proxy.CommonProxy;
 import com.Savage_Killer13.CompressedBlocks.util.Reference;
+import com.Savage_Killer13.CompressedBlocks.util.handlers.RegistryHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -28,7 +29,7 @@ public class Main {
 
     @Mod.EventHandler
     public static void PreInit(FMLPreInitializationEvent event) {
-        
+        RegistryHandler.otherRegistries();
     }
 
     @Mod.EventHandler

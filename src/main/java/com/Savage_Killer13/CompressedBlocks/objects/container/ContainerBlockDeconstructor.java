@@ -5,6 +5,7 @@
  */
 package com.Savage_Killer13.CompressedBlocks.objects.container;
 
+import com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.blockdeconstructor.BlockDeconstructorRecipes;
 import com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.blockdeconstructor.slots.SlotBlockDeconstructorFuel;
 import com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.blockdeconstructor.slots.SlotBlockDeconstructorOutput;
 import com.Savage_Killer13.CompressedBlocks.objects.tileentity.TileEntityBlockDeconstructor;
@@ -95,7 +96,7 @@ public class ContainerBlockDeconstructor extends Container {
             else if(index != 1 || index != 0) {
                 Slot slot1 = (Slot) this.inventorySlots.get(index + 1);
                 
-                if(!BlockDeconstructorRecipes().getInstance.getDeconstructResult(stack1, slot1.getStack()).isEmpty()) {
+                if(BlockDeconstructorRecipes.getInstance().getDeconstructResult(stack1) != null) {
                     if(!this.mergeItemStack(stack1, 0, 2, false)) {
                         return ItemStack.EMPTY;
                     }

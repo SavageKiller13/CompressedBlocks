@@ -5,6 +5,7 @@
  */
 package com.Savage_Killer13.CompressedBlocks.util.handlers;
 
+import com.Savage_Killer13.CompressedBlocks.objects.tileentity.TileEntityBlockDeconstructor;
 import com.Savage_Killer13.CompressedBlocks.objects.tileentity.TileEntityDenseFurnace;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -15,5 +16,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class TileEntityHandler {
     public static void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntityDenseFurnace.class, "dense_furnace");
+        GameRegistry.registerTileEntity(TileEntityBlockDeconstructor.class, "block_deconstructor");
     }
 }

@@ -1,6 +1,6 @@
 {
 	"parent": "block/cube_all",
 	"textures": {
-		"all": "skcbm:blocks/ore_overworld_dense_coal"
+		"all": "skcbm:blocks/dense_gold_ore"
 	}
 }

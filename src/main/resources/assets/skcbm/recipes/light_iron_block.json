@@ -2,17 +2,17 @@
     "type": "minecraft:crafting_shaped",
     
     "pattern": [
-        "BBB",
-        "BIB",
-        "BBB"
+        "III",
+        "ICI",
+        "III"
     ],
     
     "key": {
-        "B": {
+        "I": {
             "item": "minecraft:iron_ingot"
         },
-        "I": {
-            "item": "skcbm:item_block_compressor"
+        "C": {
+            "item": "skcbm:item_compressor"
         }
     },
     

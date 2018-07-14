@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": { 
+            "model": "skcbm:light_iron_block" 
+        }
+    }
+}

@@ -32,7 +32,7 @@ public class ContainerDenseFurnace extends Container {
         this.addSlotToContainer(new Slot(tileentity, 0, 44, 17));
         this.addSlotToContainer(new Slot(tileentity, 1, 68, 17));
         this.addSlotToContainer(new SlotDenseFurnaceFuel(tileentity, 2, 56, 53));
-        this.addSlotToContainer(new SlotDenseFurnaceOutput(player.player, tileentity, 3, 112, 31));
+        this.addSlotToContainer(new SlotDenseFurnaceOutput(player.player, tileentity, 3, 116, 35));
         
         for(int y = 0; y < 3; y++) {
             for(int x = 0; x < 9; x++) {
@@ -58,7 +58,7 @@ public class ContainerDenseFurnace extends Container {
         super.detectAndSendChanges();
         
         for(int i = 0; i < this.listeners.size(); ++i) {
-            IContainerListener listener = (IContainerListener)this.listeners.get(1);
+            IContainerListener listener = (IContainerListener) this.listeners.get(i);
             
             if(this.cookTime != this.tileentity.getField(2)) listener.sendWindowProperty(this, 2, this.tileentity.getField(2));
             if(this.burnTime != this.tileentity.getField(0)) listener.sendWindowProperty(this, 0, this.tileentity.getField(0));
@@ -86,18 +86,18 @@ public class ContainerDenseFurnace extends Container {
     @Override
     public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
         ItemStack stack = ItemStack.EMPTY;
-        Slot slot = (Slot)this.inventorySlots.get(index);
+        Slot slot = (Slot) this.inventorySlots.get(index);
         
         if(slot != null && slot.getHasStack()) {
             ItemStack stack1 = slot.getStack();
             stack = stack1.copy();
             
             if(index == 3) {
-                if(!this.mergeItemStack(stack1, 4, 40, true));
+                if(!this.mergeItemStack(stack1, 4, 40, true)) return ItemStack.EMPTY;
                 slot.onSlotChange(stack1, stack);
             }
             else if(index != 2 && index != 1 && index != 0) {
-                Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
+                Slot slot1 = (Slot) this.inventorySlots.get(index + 1);
                 
                 if(!DenseFurnaceRecipes.getInstance().getDenseResult(stack1, slot1.getStack()).isEmpty()) {
                     if(!this.mergeItemStack(stack1, 0, 2, false)) {

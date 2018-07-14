@@ -43,11 +43,11 @@ public class GuiDenseFurnace extends GuiContainer {
         
         if(TileEntityDenseFurnace.isBurning(tileentity)) {
             int k = this.getBurnLeftScaled(13);
-            this.drawTexturedModalRect(this.guiLeft + 57, this.guiTop + 34 + 12 - k, 176, 12 - k, 14, k + 1);
+            this.drawTexturedModalRect(this.guiLeft + 56, this.guiTop + 36 + 12 - k, 176, 12 - k, 14, k + 1);
         }
         
         int l = this.getCookProgressScaled(24);
-        this.drawTexturedModalRect(this.guiLeft + 42, this.guiTop + 36, 176, 14, l + 1, 14);
+        this.drawTexturedModalRect(this.guiLeft + 80, this.guiTop + 36, 176, 14, l + 1, 14);
     }
     
     private int getBurnLeftScaled(int pixels) {

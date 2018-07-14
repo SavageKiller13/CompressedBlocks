@@ -3,13 +3,16 @@
     
     "pattern": [
         "CCC",
-        "C C",
+        "CIC",
         "CCC"
     ],
     
     "key": {
         "C": {
             "item": "minecraft:clay_ball"
+        },
+        "I": {
+            "item": "skcbm:item_compressor"
         }
     },
     

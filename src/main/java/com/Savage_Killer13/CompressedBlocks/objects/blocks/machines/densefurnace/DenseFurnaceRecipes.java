@@ -6,14 +6,12 @@
 package com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.densefurnace;
 
 import com.Savage_Killer13.CompressedBlocks.init.BlockInit;
-import com.Savage_Killer13.CompressedBlocks.objects.blocks.BlockOres;
-import com.Savage_Killer13.CompressedBlocks.util.handlers.EnumHandler;
+import com.Savage_Killer13.CompressedBlocks.init.ItemInit;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Table;
 import java.util.Map;
 import java.util.Map.Entry;
-import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -31,7 +29,10 @@ public class DenseFurnaceRecipes {
     }
     
     private DenseFurnaceRecipes() {
-        addDenseRecipe(new ItemStack((Block) BlockInit.ORE_OVERWORLD.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.DENSE_IRON)), ItemStack.EMPTY, new ItemStack(Items.IRON_INGOT, 8), 10.0f);
+        addDenseRecipe(new ItemStack(BlockInit.DENSE_IRON_ORE), new ItemStack(ItemInit.SMELTING_CATALYST), new ItemStack(Items.IRON_INGOT, 8), 10.0f);
+        addDenseRecipe(new ItemStack(BlockInit.DENSE_GOLD_ORE), new ItemStack(ItemInit.SMELTING_CATALYST), new ItemStack(Items.GOLD_INGOT, 8), 10.0f);
+        addDenseRecipe(new ItemStack(BlockInit.DENSE_COAL_ORE), new ItemStack(ItemInit.SMELTING_CATALYST), new ItemStack(Items.COAL, 8), 10.0f);
+        addDenseRecipe(new ItemStack(BlockInit.DENSE_DIAMOND_ORE), new ItemStack(ItemInit.SMELTING_CATALYST), new ItemStack(Items.DIAMOND, 8), 10.0f);
     }
     
     public void addDenseRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) {

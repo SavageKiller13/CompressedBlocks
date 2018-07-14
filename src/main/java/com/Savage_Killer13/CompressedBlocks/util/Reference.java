@@ -8,6 +8,7 @@ public class Reference {
     public static final String CLIENT_PROXY_CLASS = "com.Savage_Killer13.CompressedBlocks.proxy.ClientProxy";
     public static final String COMMON_PROXY_CLASS = "com.Savage_Killer13.CompressedBlocks.proxy.CommonProxy";
     public static int GUI_DENSE_FURNACE = 0;
+    public static int GUI_BLOCK_DECONSTRUCTOR = 1;
     
     
 }

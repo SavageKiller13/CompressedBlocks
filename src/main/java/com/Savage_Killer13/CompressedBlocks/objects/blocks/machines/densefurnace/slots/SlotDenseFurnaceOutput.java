@@ -40,7 +40,4 @@ public class SlotDenseFurnaceOutput extends Slot {
         if(this.getHasStack()) this.removeCount += Math.min(amount, this.getStack().getCount());
         return super.decrStackSize(amount);
     }
-    
-    
-    
 }

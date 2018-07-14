@@ -5,11 +5,11 @@
  */
 package com.Savage_Killer13.CompressedBlocks.objects.blocks;
 
-import com.Savage_Killer13.CompressedBlocks.objects.blocks.BlockBase;
 import javax.annotation.Nonnull;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -30,6 +30,11 @@ public class DenseBlockGlass extends BlockBase {
         setLightOpacity(5);
     }
 
+    @Override
+    public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, EntityLiving.SpawnPlacementType type) {
+        return false;
+    }
+    
     @Override
     public boolean isOpaqueCube(IBlockState state) {
         return false;

@@ -9,6 +9,7 @@ import com.Savage_Killer13.CompressedBlocks.init.BlockInit;
 import com.Savage_Killer13.CompressedBlocks.objects.blocks.BlockOres;
 import com.Savage_Killer13.CompressedBlocks.util.handlers.EnumHandler;
 import java.util.Random;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -24,23 +25,27 @@ import net.minecraftforge.fml.common.IWorldGenerator;
  * @author Soren Mortimer
  */
 public class WorldGenCustomOres implements IWorldGenerator {
-    private final WorldGenerator ore_overworld_dense_iron, ore_overworld_dense_gold, ore_overworld_dense_coal, ore_overworld_dense_diamond;
+    private final WorldGenerator dense_iron_ore, dense_gold_ore, dense_coal_ore, dense_diamond_ore, dense_emerald_ore, dense_lapis_ore;
     
     public WorldGenCustomOres() {
-        ore_overworld_dense_iron = new WorldGenMinable(BlockInit.ORE_OVERWORLD.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.DENSE_IRON), 4, BlockMatcher.forBlock(Blocks.STONE));
-        ore_overworld_dense_gold = new WorldGenMinable(BlockInit.ORE_OVERWORLD.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.DENSE_GOLD), 2, BlockMatcher.forBlock(Blocks.STONE));
-        ore_overworld_dense_coal = new WorldGenMinable(BlockInit.ORE_OVERWORLD.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.DENSE_COAL), 6, BlockMatcher.forBlock(Blocks.STONE));
-        ore_overworld_dense_diamond = new WorldGenMinable(BlockInit.ORE_OVERWORLD.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.DENSE_DIAMOND), 1, BlockMatcher.forBlock(Blocks.STONE));
+        dense_iron_ore = new WorldGenMinable(BlockInit.DENSE_IRON_ORE.getDefaultState(), 5, BlockMatcher.forBlock(Blocks.STONE));
+        dense_gold_ore = new WorldGenMinable(BlockInit.DENSE_GOLD_ORE.getDefaultState(), 3, BlockMatcher.forBlock(Blocks.STONE));
+        dense_coal_ore = new WorldGenMinable(BlockInit.DENSE_COAL_ORE.getDefaultState(), 7, BlockMatcher.forBlock(Blocks.STONE));
+        dense_diamond_ore = new WorldGenMinable(BlockInit.DENSE_DIAMOND_ORE.getDefaultState(), 2, BlockMatcher.forBlock(Blocks.STONE));
+        dense_emerald_ore = new WorldGenMinable(BlockInit.DENSE_EMERALD_ORE.getDefaultState(), 1, BlockMatcher.forBlock(Blocks.STONE));
+        dense_lapis_ore = new WorldGenMinable(BlockInit.DENSE_LAPIS_ORE.getDefaultState(), 2, BlockMatcher.forBlock(Blocks.STONE));
     }
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         switch(world.provider.getDimension()) {
             case 0:
-                runGenerator(ore_overworld_dense_gold, world, random, chunkX, chunkZ, 50, 0, 40);
-                runGenerator(ore_overworld_dense_iron, world, random, chunkX, chunkZ, 100, 0, 256);
-                runGenerator(ore_overworld_dense_coal, world, random, chunkX, chunkZ, 100, 0, 256);
-                runGenerator(ore_overworld_dense_diamond, world, random, chunkX, chunkZ, 100, 0, 20);
+                runGenerator(dense_gold_ore, world, random, chunkX, chunkZ, 100, 0, 40);
+                runGenerator(dense_iron_ore, world, random, chunkX, chunkZ, 100, 0, 256);
+                runGenerator(dense_coal_ore, world, random, chunkX, chunkZ, 100, 0, 256);
+                runGenerator(dense_diamond_ore, world, random, chunkX, chunkZ, 100, 0, 16);
+                runGenerator(dense_emerald_ore, world, random, chunkX, chunkZ, 100, 4, 14);
+                runGenerator(dense_lapis_ore, world, random, chunkX, chunkZ, 100, 0, 30);
                 break;
         }
     }

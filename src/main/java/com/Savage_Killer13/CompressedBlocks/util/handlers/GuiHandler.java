@@ -5,8 +5,11 @@
  */
 package com.Savage_Killer13.CompressedBlocks.util.handlers;
 
+import com.Savage_Killer13.CompressedBlocks.objects.GUI.GuiBlockDeconstructor;
 import com.Savage_Killer13.CompressedBlocks.objects.GUI.GuiDenseFurnace;
+import com.Savage_Killer13.CompressedBlocks.objects.container.ContainerBlockDeconstructor;
 import com.Savage_Killer13.CompressedBlocks.objects.container.ContainerDenseFurnace;
+import com.Savage_Killer13.CompressedBlocks.objects.tileentity.TileEntityBlockDeconstructor;
 import com.Savage_Killer13.CompressedBlocks.objects.tileentity.TileEntityDenseFurnace;
 import com.Savage_Killer13.CompressedBlocks.util.Reference;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,12 +26,14 @@ public class GuiHandler implements IGuiHandler {
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         if(ID == Reference.GUI_DENSE_FURNACE) return new ContainerDenseFurnace(player.inventory, (TileEntityDenseFurnace)world.getTileEntity(new BlockPos(x, y, z)));
+        if(ID == Reference.GUI_BLOCK_DECONSTRUCTOR) return new ContainerBlockDeconstructor(player.inventory, (TileEntityBlockDeconstructor)world.getTileEntity(new BlockPos(x, y, z)));
         return null;
    }
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         if(ID == Reference.GUI_DENSE_FURNACE) return new GuiDenseFurnace(player.inventory, (TileEntityDenseFurnace)world.getTileEntity(new BlockPos(x, y, z)));
+        if(ID == Reference.GUI_BLOCK_DECONSTRUCTOR) return new GuiBlockDeconstructor(player.inventory, (TileEntityBlockDeconstructor)world.getTileEntity(new BlockPos(x, y, z)));
         return null;
     }
     

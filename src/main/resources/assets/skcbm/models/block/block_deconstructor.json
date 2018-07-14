@@ -1,0 +1,11 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "up": "skcbm:blocks/block_deconstructor_top",
+        "down": "skcbm:blocks/block_deconstructor_bottom",
+        "north": "skcbm:blocks/block_deconstructor_off",
+        "south": "skcbm:blocks/block_deconstructor_side",
+        "east": "skcbm:blocks/block_deconstructor_side",
+        "west": "skcbm:blocks/block_deconstructor_side"
+    }
+}

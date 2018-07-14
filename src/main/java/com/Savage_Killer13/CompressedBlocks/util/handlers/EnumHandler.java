@@ -4,10 +4,7 @@ import net.minecraft.util.IStringSerializable;
 
 public class EnumHandler {
     public static enum EnumType implements IStringSerializable {
-        DENSE_IRON(0, "dense_iron"),
-        DENSE_COAL(1, "dense_coal"),
-        DENSE_GOLD(2, "dense_gold"),
-        DENSE_DIAMOND(3, "dense_diamond");
+        DENSE_LOG(0, "dense_iron");
         
         private static final EnumType[] META_LOOKUP = new EnumType[values().length];
         private final int meta;

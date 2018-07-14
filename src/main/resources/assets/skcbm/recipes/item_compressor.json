@@ -2,8 +2,8 @@
     "type": "minecraft:crafting_shaped",
     
     "pattern": [
-        "D D",
-        "ISI",
+        "I I",
+        "DSD",
         " S "
     ],
     
@@ -20,6 +20,6 @@
     },
     
     "result": {
-        "item": "skcbm:item_block_compressor"
+        "item": "skcbm:item_compressor"
     }
 }

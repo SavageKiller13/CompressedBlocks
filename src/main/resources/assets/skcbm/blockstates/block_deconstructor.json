@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "burning=false,facing=north": { "model": "skcbm:block_deconstructor" },
+        "burning=false,facing=south": { "model": "skcbm:block_deconstructor", "y": 90 },
+        "burning=false,facing=east": { "model": "skcbm:block_deconstructor", "y": 180 },
+        "burning=false,facing=west": { "model": "skcbm:block_deconstructor", "y": 270 },
+        "burning=true,facing=north": { "model": "skcbm:lit_block_deconstructor" },
+        "burning=true,facing=south": { "model": "skcbm:lit_block_deconstructor", "y": 90 },
+        "burning=true,facing=east": { "model": "skcbm:lit_block_deconstructor", "y": 180 },
+        "burning=true,facing=west": { "model": "skcbm:lit_block_deconstructor", "y": 270 }
+    }
+}

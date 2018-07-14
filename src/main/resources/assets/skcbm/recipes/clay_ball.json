@@ -1,10 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
+    "type": "minecraft:crafting_shaped",
     
     "pattern": [
-        "C  ",
-        "   ",
-        "   "
+        "C"
     ],
     
     "key": {

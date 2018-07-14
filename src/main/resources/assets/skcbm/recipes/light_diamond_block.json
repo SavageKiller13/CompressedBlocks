@@ -2,21 +2,21 @@
     "type": "minecraft:crafting_shaped",
     
     "pattern": [
-        "BBB",
-        "BIB",
-        "BBB"
+        "DDD",
+        "DCD",
+        "DDD"
     ],
     
     "key": {
-        "B": {
-            "item": "minecraft:iron_ingot"
+        "D": {
+            "item": "minecraft:diamond"
         },
-        "I": {
-            "item": "skcbm:item_block_compressor"
+        "C": {
+            "item": "skcbm:item_compressor"
         }
     },
     
     "result": {
-        "item": "skcbm:light_iron_block"
+        "item": "skcbm:light_diamond_block"
     }
 }

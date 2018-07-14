@@ -20,6 +20,7 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
@@ -47,6 +48,11 @@ public class BlockDenseFurnace extends BlockBase implements ITileEntityProvider 
         super(name, Material.ROCK);
         setSoundType(SoundType.STONE);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, false));
+        setHardness(5);
+        setResistance(15);
+        setHarvestLevel("pickaxe", 2);
+        
+        setCreativeTab(CreativeTabs.DECORATIONS);
     }
 
     @Override
@@ -62,7 +68,6 @@ public class BlockDenseFurnace extends BlockBase implements ITileEntityProvider 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if(!worldIn.isRemote) {
-            System.out.println("Furnace Gui Opened");
             playerIn.openGui(Main.instance, Reference.GUI_DENSE_FURNACE, worldIn, pos.getX(), pos.getY(), pos.getZ());
         }
         return true;

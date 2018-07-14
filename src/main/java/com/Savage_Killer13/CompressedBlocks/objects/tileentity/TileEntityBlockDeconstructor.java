@@ -5,6 +5,8 @@
  */
 package com.Savage_Killer13.CompressedBlocks.objects.tileentity;
 
+import com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.blockdeconstructor.BlockDeconstructor;
+import com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.blockdeconstructor.BlockDeconstructorRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -30,7 +32,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  *
  * @author Soren Mortimer
  */
-public class TileEntityBlockDeconstructor extends TileEntity implements IInventory, ITickable {
+public class TileEntityBlockDeconstructor extends TileEntity implements ITickable, IInventory {
+    
+    
     private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
     private String customName;
     
@@ -41,7 +45,7 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
 
     @Override
     public String getName() {
-        return this.hasCustomName() ? this.customName : "container.blockDeconstructor";
+        return this.hasCustomName() ? this.customName : "container.block_deconstructor";
     }
 
     @Override
@@ -66,7 +70,9 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
     @Override
     public boolean isEmpty() {
         for(ItemStack stack : this.inventory) {
-            if(!stack.isEmpty()) return false;
+            if(!stack.isEmpty()) {
+                return false;
+            }
         }
         return true;
     }
@@ -94,9 +100,8 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
         
         if(stack.getCount() > this.getInventoryStackLimit())
             stack.setCount(this.getInventoryStackLimit());
-        if(index == 0 && index + 1 == 1 && !flag) {
-            ItemStack stack1 = (ItemStack) this.inventory.get(index + 1);
-            this.totalDeconstructTime = this.getCookTime(stack, stack1);
+        if(index == 0 && !flag) {
+            this.totalDeconstructTime = this.getDeconstructTime(stack);
             this.deconstructTime = 0;
             this.markDirty();
         }
@@ -149,7 +154,7 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
         if(this.isBurning()) --this.burnTime;
         
         if(!this.world.isRemote) {
-            ItemStack stack = (ItemStack) this.inventory.get(burnTime);
+            ItemStack stack = (ItemStack) this.inventory.get(1);
             
             if(this.isBurning() || !stack.isEmpty() && !((ItemStack) this.inventory.get(1)).isEmpty()) {
                 if(!this.isBurning() && this.canDeconstruct()) {
@@ -186,12 +191,13 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
             } else if(!this.isBurning() && this.deconstructTime > 0) {
                 this.deconstructTime = MathHelper.clamp(this.deconstructTime - 2, 0, this.totalDeconstructTime);
             }
-            if(flag1 != this.isBurning()) {
+            if(flag != this.isBurning()) {
                 flag1 = true;
                 BlockDeconstructor.setState(this.isBurning(), this.world, this.pos);
             }
-        } if (flag1)
+        } if (flag1) {
             this.markDirty();
+        }
     }
     
     public int getDeconstructTime(ItemStack input) {
@@ -201,14 +207,20 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
     public boolean canDeconstruct() {
         if(((ItemStack) this.inventory.get(1)).isEmpty()) return false;
         else {
-            ItemStack result = BlockDeconstructerRecipes.getInstance().getDeconstructResult((ItemStack) this.inventory.get(1));
-            if(result.isEmpty()) return false;
+            ItemStack result = BlockDeconstructorRecipes.getInstance().getDeconstructResult((ItemStack) this.inventory.get(1));
+            if(result.isEmpty()) {
+                return false;
+            }
             else {
                 ItemStack output = (ItemStack) this.inventory.get(2);
                 if(output.isEmpty()) return true;
                 if(!output.isItemEqual(result)) return false;
-                int res = output.getCount() + result.getCount();
-                return res <= getInventoryStackLimit() && res <= output.getMaxStackSize();
+                else if (output.getCount() + result.getCount() <= this.getInventoryStackLimit() && output.getCount() + result.getCount() <= output.getMaxStackSize()) {
+                    return true;
+                }
+                else {
+                    return output.getCount() + result.getCount() <= result.getMaxStackSize();
+                }
             }
         }
     }
@@ -216,11 +228,11 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
     public void deconstructItem() {
         if(this.canDeconstruct()) {
             ItemStack input = (ItemStack) this.inventory.get(1);
-            ItemStack result = BlockDeconstructerRecipes.getInstance().getDeconstructResult(input);
+            ItemStack result = BlockDeconstructorRecipes.getInstance().getDeconstructResult(input);
             ItemStack output = (ItemStack) this.inventory.get(2);
             
             if(output.isEmpty()) {
-                this.inventory.set(3, result.copy());
+                this.inventory.set(2, result.copy());
             } else if(output.getItem() == result.getItem()) output.grow(result.getCount());
             
             input.shrink(1);
@@ -309,7 +321,7 @@ public class TileEntityBlockDeconstructor extends TileEntity implements IInvento
 
     @Override
     public int getFieldCount() {
-        return 3;
+        return 4;
     }
 
     @Override

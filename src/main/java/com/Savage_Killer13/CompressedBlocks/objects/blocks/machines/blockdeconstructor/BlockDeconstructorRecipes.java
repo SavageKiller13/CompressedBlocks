@@ -27,7 +27,7 @@ public class BlockDeconstructorRecipes {
     
     private BlockDeconstructorRecipes() {
         addDeconstructRecipe(new ItemStack(BlockInit.DENSE_COBBLESTONE), new ItemStack(Blocks.COBBLESTONE, 8));
-        addDeconstructRecipe(new ItemStack(BlockInit.DENSE_DIRT), new ItemStack(Blocks.DIRT));
+        addDeconstructRecipe(new ItemStack(BlockInit.DENSE_DIRT), new ItemStack(Blocks.DIRT, 8));
     }
     
     public void addDeconstructRecipe(ItemStack input, ItemStack result) {

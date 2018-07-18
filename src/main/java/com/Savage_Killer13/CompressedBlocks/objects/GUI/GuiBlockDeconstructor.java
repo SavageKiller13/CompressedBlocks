@@ -43,11 +43,11 @@ public class GuiBlockDeconstructor extends GuiContainer {
         
         if(TileEntityBlockDeconstructor.isBurning(tileentity)) {
             int k = this.getBurnLeftScaled(13);
-            this.drawTexturedModalRect(this.guiLeft + 27, this.guiTop + 51 + 12 - k, 176, 12 - k, 14, k + 1);
+            this.drawTexturedModalRect(this.guiLeft + 27, this.guiTop + 47 + 12 - k, 176, 12 - k, 14, k + 1);
         }
         
         int l = this.getDeconstructProgressScaled(24);
-        this.drawTexturedModalRect(this.guiLeft + 85, this.guiTop + 32, 176, 14, l + 1, 14);
+        this.drawTexturedModalRect(this.guiLeft + 86, this.guiTop + 33, 176, 14, l + 1, 14);
     }
     
     private int getBurnLeftScaled(int pixels) {

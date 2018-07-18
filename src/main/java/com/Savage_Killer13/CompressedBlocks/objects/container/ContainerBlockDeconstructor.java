@@ -13,6 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -23,15 +24,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @author Soren Mortimer
  */
 public class ContainerBlockDeconstructor extends Container {
-    private final TileEntityBlockDeconstructor tileentity;
+    private final IInventory tileentity;
     private int burnTime, currentBurnTime, deconstructTime, totalDeconstructTime;
     
-    public ContainerBlockDeconstructor(InventoryPlayer player, TileEntityBlockDeconstructor tileentity) {
+    public ContainerBlockDeconstructor(InventoryPlayer player, IInventory tileentity) {
         this.tileentity = tileentity;
         
-        this.addSlotToContainer(new Slot(tileentity, 1, 63, 34));
-        this.addSlotToContainer(new SlotBlockDeconstructorFuel(tileentity, 0, 27, 34));
-        this.addSlotToContainer(new SlotBlockDeconstructorOutput(player.player, tileentity, 2, 124, 34));
+        this.addSlotToContainer(new Slot(tileentity, 0, 62, 33));
+        this.addSlotToContainer(new SlotBlockDeconstructorFuel(tileentity, 1, 27, 33));
+        this.addSlotToContainer(new SlotBlockDeconstructorOutput(player.player, tileentity, 2, 122, 33));
         
         for(int y = 0; y < 3; y++) {
             for(int x = 0; x < 9; x++) {
@@ -57,16 +58,16 @@ public class ContainerBlockDeconstructor extends Container {
         for(int i = 0; i < this.listeners.size(); ++i) {
             IContainerListener listener = (IContainerListener) this.listeners.get(i);
             
-            if(this.deconstructTime != this.tileentity.getField(0)) listener.sendWindowProperty(this, 0, this.tileentity.getField(0));
-            if(this.burnTime != this.tileentity.getField(1)) listener.sendWindowProperty(this, 1, this.tileentity.getField(1));
+            if(this.deconstructTime != this.tileentity.getField(2)) listener.sendWindowProperty(this, 2, this.tileentity.getField(2));
+            if(this.burnTime != this.tileentity.getField(0)) listener.sendWindowProperty(this, 0, this.tileentity.getField(0));
             if(this.currentBurnTime != this.tileentity.getField(1)) listener.sendWindowProperty(this, 1, this.tileentity.getField(1));
-            if(this.totalDeconstructTime != this.tileentity.getField(2)) listener.sendWindowProperty(this, 2, this.tileentity.getField(2));
+            if(this.totalDeconstructTime != this.tileentity.getField(3)) listener.sendWindowProperty(this, 3, this.tileentity.getField(3));
         }
         
-        this.deconstructTime = this.tileentity.getField(0);
-        this.burnTime = this.tileentity.getField(1);
+        this.deconstructTime = this.tileentity.getField(2);
+        this.burnTime = this.tileentity.getField(0);
         this.currentBurnTime = this.tileentity.getField(1);
-        this.totalDeconstructTime = this.tileentity.getField(2);
+        this.totalDeconstructTime = this.tileentity.getField(3);
     }
 
     @Override
@@ -90,34 +91,26 @@ public class ContainerBlockDeconstructor extends Container {
             stack = stack1.copy();
             
             if(index == 2) {
-                if(!this.mergeItemStack(stack1, 4, 40, true)) return ItemStack.EMPTY;
+                if(!this.mergeItemStack(stack1, 3, 39, true)) return ItemStack.EMPTY;
                 slot.onSlotChange(stack1, stack);
             }
             else if(index != 1 || index != 0) {
-                Slot slot1 = (Slot) this.inventorySlots.get(index + 1);
-                
-                if(BlockDeconstructorRecipes.getInstance().getDeconstructResult(stack1) != null) {
-                    if(!this.mergeItemStack(stack1, 0, 2, false)) {
-                        return ItemStack.EMPTY;
-                    }
-                    else if(TileEntityBlockDeconstructor.isItemFuel(stack1)) {
-                        if(!this.mergeItemStack(stack1, 2, 3, false)) return ItemStack.EMPTY;
-                    }
-                    else if(TileEntityBlockDeconstructor.isItemFuel(stack1)) {
-                        if(!this.mergeItemStack(stack1, 2, 3, false)) return ItemStack.EMPTY;
-                    }
-                    else if(TileEntityBlockDeconstructor.isItemFuel(stack1)) {
-                        if(!this.mergeItemStack(stack1, 2, 3, false)) return ItemStack.EMPTY;
-                    }
-                    else if(index >= 4 && index < 31) {
-                        if(!this.mergeItemStack(stack1, 31, 40, false)) return ItemStack.EMPTY;
-                    }
-                    else if(index >= 31 && index < 40 && !this.mergeItemStack(stack1, 4, 31, false)) {
+                if(!BlockDeconstructorRecipes.getInstance().getDeconstructResult(stack1).isEmpty()) {
+                    if(!this.mergeItemStack(stack1, 0, 1, false)) {
                         return ItemStack.EMPTY;
                     }
                 }
+                else if(TileEntityBlockDeconstructor.isItemFuel(stack1)) {
+                    if(!this.mergeItemStack(stack1, 1, 2, false)) return ItemStack.EMPTY;
+                }
+                else if(index >= 3 && index < 30) {
+                    if(!this.mergeItemStack(stack1, 30, 39, false)) return ItemStack.EMPTY;
+                }
+                else if(index >= 31 && index < 40 && !this.mergeItemStack(stack1, 4, 31, false)) {
+                    return ItemStack.EMPTY;
+                }
             }
-            else if(!this.mergeItemStack(stack1, 4, 40, false)) {
+            else if(!this.mergeItemStack(stack1, 3, 39, false)) {
                 return ItemStack.EMPTY;
             }
             if(stack1.isEmpty()) {

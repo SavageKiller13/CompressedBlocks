@@ -6,10 +6,14 @@ import com.Savage_Killer13.CompressedBlocks.objects.blocks.CompressedBlock;
 import com.Savage_Killer13.CompressedBlocks.objects.blocks.LightBlock;
 import com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.blockdeconstructor.BlockDeconstructor;
 import com.Savage_Killer13.CompressedBlocks.objects.blocks.machines.densefurnace.BlockDenseFurnace;
+import com.Savage_Killer13.CompressedBlocks.objects.tileentity.TileEntityBlockDeconstructor;
+import com.Savage_Killer13.CompressedBlocks.objects.tileentity.TileEntityDenseFurnace;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockInit {
     public static final List<Block> BLOCKS = new ArrayList<Block>();
@@ -39,5 +43,14 @@ public class BlockInit {
     
     public static final Block DENSE_FURNACE = new BlockDenseFurnace("dense_furnace");
     public static final Block BLOCK_DECONSTRUCTOR = new BlockDeconstructor("block_deconstructor");
+    
+    public static void registerTE(Class<? extends TileEntity> tileentity, Block block) {
+        GameRegistry.registerTileEntity(tileentity, block.getRegistryName().getResourcePath());
+    }
+    
+    public static void registerTileEntities() {
+        registerTE(TileEntityBlockDeconstructor.class, BLOCK_DECONSTRUCTOR);
+        registerTE(TileEntityDenseFurnace.class, DENSE_FURNACE);
+    }
     
 }

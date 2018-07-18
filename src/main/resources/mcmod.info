@@ -2,7 +2,7 @@
 {
   "modid": "skcbm",
   "name": "Compressed Blocks Mod",
-  "description": "A mod for turning normal blocks into a compressed form.",
+  "description": "A mod for turning normal blocks and items into a compressed form.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",

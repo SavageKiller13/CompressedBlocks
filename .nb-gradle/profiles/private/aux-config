@@ -5,29 +5,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/densefurnace/BlockDenseFurnace.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/densefurnace/slots/SlotDenseFurnaceOutput.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/container/ContainerDenseFurnace.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/tileentity/TileEntityDenseFurnace.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/GUI/GuiDenseFurnace.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/container/ContainerBlockDeconstructor.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/util/handlers/TileEntityHandler.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/GUI/GuiBlockDeconstructor.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/blockdeconstructor/BlockDeconstructor.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/init/BlockInit.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/tileentity/TileEntityBlockDeconstructor.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/util/handlers/RegistryHandler.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/blockdeconstructor/BlockDeconstructorRecipes.java</file>
       </group>
     </open-files>
     <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/util/handlers/TileEntityHandler.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/densefurnace/slots/SlotDenseFurnaceOutput.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/container/ContainerDenseFurnace.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/util/handlers/GuiHandler.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/tileentity/TileEntityDenseFurnace.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/densefurnace/DenseFurnaceRecipes.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/GUI/GuiDenseFurnace.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/util/handlers/RegistryHandler.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/container/ContainerBlockDeconstructor.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/GUI/GuiBlockDeconstructor.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/blockdeconstructor/BlockDeconstructor.java</file>
         <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/init/BlockInit.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/densefurnace/BlockDenseFurnace.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/resources/assets/skcbm/models/block/lit_dense_furnace.json</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/blocks/machines/densefurnace/slots/SlotDenseFurnaceFuel.java</file>
-        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/Main.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/util/handlers/RegistryHandler.java</file>
+        <file>file:/C:/Users/Soren%20Mortimer/Desktop/Coding/MinecraftModding/CompressedBlocksMod/src/main/java/com/Savage_Killer13/CompressedBlocks/objects/tileentity/TileEntityBlockDeconstructor.java</file>
       </group>
     </open-files>
   </auxiliary>

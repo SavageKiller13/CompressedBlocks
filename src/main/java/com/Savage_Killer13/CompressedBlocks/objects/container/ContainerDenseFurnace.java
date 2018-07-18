@@ -32,7 +32,7 @@ public class ContainerDenseFurnace extends Container {
         this.addSlotToContainer(new Slot(tileentity, 0, 44, 17));
         this.addSlotToContainer(new Slot(tileentity, 1, 68, 17));
         this.addSlotToContainer(new SlotDenseFurnaceFuel(tileentity, 2, 56, 53));
-        this.addSlotToContainer(new SlotDenseFurnaceOutput(player.player, tileentity, 3, 116, 35));
+        this.addSlotToContainer(new SlotDenseFurnaceOutput(player.player, tileentity, 3, 116, 34));
         
         for(int y = 0; y < 3; y++) {
             for(int x = 0; x < 9; x++) {

@@ -2,7 +2,6 @@ package com.Savage_Killer13.CompressedBlocks.objects.items;
 
 import com.Savage_Killer13.CompressedBlocks.Main;
 import com.Savage_Killer13.CompressedBlocks.init.ItemInit;
-import com.Savage_Killer13.CompressedBlocks.proxy.ClientProxy;
 import com.Savage_Killer13.CompressedBlocks.util.interfaces.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
